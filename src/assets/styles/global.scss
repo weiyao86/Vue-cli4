@@ -1,18 +1,40 @@
- @import "./reset.scss";
-
+ @charset 'UTF-8';
+ @import './reset.scss';
  html,
  body {
      height: 100%;
      transition: all .2s;
  }
-  * {
-     scroll-behavior: smooth;
- }
 
+.line-ellipsis{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.line2-ellipsis{
+     display: -webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+    overflow: hidden;
+}
 
+input{
+    caret-color:#ff9900;
+}
 
+.page {
+        padding-bottom:0;
+    }
+
+.paddingBottom{
+        padding-bottom:0;
+    }
  .isIPhoneX {
-    .page{
-        padding-bottom:34px;
+    .page {
+        padding-bottom:3.125rem;
+    }
+    .paddingBottom{
+        padding-bottom:3.125rem;
     }
  }
+

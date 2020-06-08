@@ -4,7 +4,7 @@ const globalExpireCardConfig = {
 		getMonthByYear: '/shop.Statistics/getExpiredCard' //https://www.xinyingtong.cn/api
 	}
 };
-import Vue from 'vue'
+
 import {
 	Popup,
 	Picker

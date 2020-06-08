@@ -19,10 +19,26 @@ const routes = [{
 	meta: {
 		keepAlive: false
 	}
+}, {
+	path: '/publication',
+	name: 'Publication',
+	component: () =>
+		import ('@views/card/Publication.vue'),
+	meta: {
+		keepAlive: false
+	}
 }]
 
 const router = new VueRouter({
 	routes
 })
+
+router.beforeEach((to, from, next) => {
+
+	if (window.GlobalVue) {
+		window.GlobalVue.$store.commit("removeCancelToken");
+	}
+	next();
+});
 
 export default router

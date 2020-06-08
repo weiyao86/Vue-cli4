@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import Plug from './lib/plug'
 import CommonHttp from './lib/commonHttp'
+import Config from './lib/config'
 import {
 	Toast
 } from 'vant';
@@ -12,6 +13,7 @@ import store from './store'
 Vue.config.productionTip = false
 
 Vue.use(Plug, CommonHttp);
+Vue.use(Config);
 
 var attachFastClick = require('fastclick');
 attachFastClick.attach(document.body);

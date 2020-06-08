@@ -10,6 +10,7 @@ const config = {
 	}
 };
 
+
 //dev与prod环境baseURL配置
 if (process.env.NODE_ENV === 'development') {
 	//开发环境
@@ -20,6 +21,8 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 const CancelToken = axios.CancelToken;
+// let source = CancelToken.source();
+
 
 const instance = axios.create(config);
 
@@ -40,9 +43,6 @@ let interceptors = instance.interceptors.request.use(function(config) {
 			loadingType: 'spinner'
 		});
 	}
-	config.cancelToken = new CancelToken(cancel => {
-		//cancel 方法
-	});
 
 	let token = localStorage.getItem("userInfo");
 	if (!config.headers.hasOwnProperty('Authorization') && token) {
@@ -50,6 +50,15 @@ let interceptors = instance.interceptors.request.use(function(config) {
 	} else {
 		config.headers.Authorization = '';
 	}
+
+	// config.cancelToken = source.token;
+	config.cancelToken = new CancelToken(cancel => {
+		//传入当前所有请求状态，由切换路由时处理
+		if (window.GlobalVue) {
+			window.GlobalVue.$store.commit("setCancelToken", cancel);
+		}
+	});
+
 	return config;
 }, function(error) {
 	// 对请求错误做些什么
@@ -72,7 +81,12 @@ instance.interceptors.response.use(function(res) {
 	}
 	return res;
 }, function(error) {
-	if (error.config.isLoading) {
+	if (typeof error == "string") {
+		error = {
+			message: error
+		}
+	}
+	if (error && error.config && error.config.isLoading) {
 		GlobalVue.$toast.clear();
 	}
 
