@@ -3,6 +3,7 @@ import App from './App.vue'
 import Plug from './lib/plug'
 import CommonHttp from './lib/commonHttp'
 import Config from './lib/config'
+import Adjust from './lib/adjust'
 import {
 	Toast
 } from 'vant';

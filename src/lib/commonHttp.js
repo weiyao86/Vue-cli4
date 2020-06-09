@@ -1,6 +1,10 @@
 import Vue from 'vue';
 import axios from 'axios';
 
+/**
+ * [config description]
+ * @type {Object}
+ */
 const config = {
 	baseURL: 'https://www.xinyingtong.cn/api/',
 	timeout: 30 * 1000,
@@ -130,7 +134,9 @@ instance.interceptors.response.use(function(res) {
 	return Promise.reject(error);
 });
 
-
+/**
+ * 
+ */
 export default {
 
 	cmpName: 'axios',

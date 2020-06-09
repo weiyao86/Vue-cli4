@@ -1,59 +1,77 @@
-html,body{
+html,
+body {
     background: #f5f5f5;
 }
+
 .header-bg {
-    background: url("../../images/banner_bg.png") no-repeat center/cover transparent;
-    height: 7.5rem;
     overflow: hidden;
 
+    height: 7.5rem;
+
+    background: url('../../images/banner_bg.png') no-repeat center/cover transparent;
+
     .title {
-        margin-top: 2.375rem;
-        color: #fff;
         font-size: 1.0625rem;
-        text-align: center;
         font-weight: 400;
+
+        margin-top: 2.375rem;
+
+        text-align: center;
+
+        color: #fff;
     }
 
     .calend-wrap {
-        border: 1px solid #fff;
-        border-radius: 0.25rem;
-        color: #fff;
-        height: 1.875rem;
         line-height: 1.875rem;
-        margin: 0.75rem 5.9375rem;
+
         display: flex;
+
+        height: 1.875rem;
+        margin: .75rem 5.9375rem;
+
         text-align: center;
+
+        color: #fff;
+        border: 1px solid #fff;
+        border-radius: .25rem;
 
         .left {
             position: relative;
+
             flex: 1;
 
             &:after {
-                content: '';
-                height: auto;
-                width: 0.0625rem;
-                background: #fff;
                 position: absolute;
-                right: 0;
                 top: 2px;
+                right: 0;
                 bottom: 2px;
+
+                width: .0625rem;
+                height: auto;
+
+                content: '';
+
+                background: #fff;
             }
         }
 
         .right {
-            width: 3rem;
             display: flex;
+
+            width: 3rem;
+
             align-items: center;
             justify-content: center;
 
             .date-icon {
-                background: url("../../images/date.png")no-repeat center/cover transparent;
                 display: inline-block;
+
                 width: 1.125rem;
                 height: 1.0625rem;
+
+                background: url('../../images/date.png')no-repeat center/cover transparent;
             }
         }
-
     }
 }
 
@@ -61,54 +79,69 @@ html,body{
     padding-bottom: 2.6rem;
 
     .tab {
-        height: 2.625rem;
         display: flex;
 
+        height: 2.625rem;
+
         li {
-            flex: 1;
             display: flex;
+
             background: #fff;
+
+            flex: 1;
         }
 
         .title {
-            color: #999999;
-            font-size: 0.875rem;
-            border-bottom: 1px solid #fff;
+            font-size: .875rem;
+            line-height: 2.6rem;
+
             width: 5.75rem;
             margin: 0 auto;
-            flex: 1;
+
             text-align: center;
-            line-height: 2.6rem;
+
+            color: #999;
+            border-bottom: 1px solid #fff;
+
+            flex: 1;
         }
 
         .active {
-            color: #ff7700;
-            font-size: 0.9375rem;
+            font-size: .9375rem;
             font-weight: bold;
+
             position: relative;
+
+            color: #f70;
         }
 
         .active:before {
-            content: '';
             position: absolute;
             bottom: -1px;
             left: 50%;
-            transform: translateX(-50%);
-            background: #ff7700;
+
             width: 5.75rem;
-            height: 0.1875rem;
+            height: .1875rem;
+
+            content: '';
+            transform: translateX(-50%);
+
+            background: #f70;
         }
     }
 
     .p-total {
+        font-size: .875rem;
         line-height: 30px;
-        margin: 0.9375rem;
-        font-size: 0.875rem;
 
-        .title{
-            color:#ff7700;
-            padding:0 0.625rem 0 0;
+        margin: .9375rem;
+
+        .title {
+            padding: 0 .625rem 0 0;
+
+            color: #f70;
         }
+
         span {
             font-weight: bold;
         }
@@ -116,30 +149,40 @@ html,body{
 
     .list-detail-grid {
         display: flex;
-        flex-wrap: wrap;
-        margin: 0.9375rem 0;
+
+        margin: .9375rem 0;
+
         background: #fff;
+
+        flex-wrap: wrap;
 
         .item:nth-child(2n-1) {
             border-right: 1px solid #f0f0f0;
         }
 
         .item {
-            border-bottom: 1px solid #f0f0f0;
-            width: calc(50% - 1px);
-            height: 6.25rem;
             display: flex;
-            flex-flow: column;
-            text-align: center;
             overflow: hidden;
 
+            width: calc(50% - 1px);
+            height: 6.25rem;
+
+            text-align: center;
+
+            border-bottom: 1px solid #f0f0f0;
+
+            flex-flow: column;
+
             .up {
+                font-size: .75rem;
+
                 display: flex;
+
+                color: #ccc;
+
                 align-items: flex-end;
                 justify-content: center;
                 flex: 1;
-                font-size: 0.75rem;
-                color: #ccc;
 
                 .text {
                     color: #f00;
@@ -147,31 +190,37 @@ html,body{
             }
 
             .middle {
-                flex: 1;
+                font-size: 1.125rem;
+                font-weight: bold;
+
                 display: flex;
+
+                color: #00bb4e;
+
+                flex: 1;
                 align-items: center;
                 justify-content: center;
-                font-size: 1.125rem;
-                color: #00bb4e;
-                font-weight: bold;
             }
 
             .down {
+                font-size: .875rem;
+                font-weight: bold;
+                line-height: 1.0rem;
+
+                display: -webkit-box;
+                overflow: hidden;
+
+                color: #333;
+
                 flex: 1;
                 align-items: flex-start;
                 justify-content: center;
-                font-size: 0.875rem;
-                color: #333;
-                font-weight: bold;
-                line-height: 1.0rem;
-                display: -webkit-box;
                 -webkit-box-orient: vertical;
                 -webkit-line-clamp: 2;
-                overflow: hidden;
             }
-
         }
-        .no-bottom-line{
+
+        .no-bottom-line {
             border-bottom-width: 0;
         }
     }

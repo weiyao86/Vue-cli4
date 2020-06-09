@@ -27,6 +27,14 @@ const routes = [{
 	meta: {
 		keepAlive: false
 	}
+}, {
+	path: '/company',
+	name: 'Company',
+	component: () =>
+		import ('@views/card/Company.vue'),
+	meta: {
+		keepAlive: false
+	}
 }]
 
 const router = new VueRouter({

@@ -2,7 +2,7 @@
     <van-tabbar v-model="active" fixed route>
   <van-tabbar-item icon="home-o" replace to="/expire">标签</van-tabbar-item>
   <van-tabbar-item icon="search" replace to="/publication" dot>标签</van-tabbar-item>
-  <van-tabbar-item icon="friends-o" badge="5">标签</van-tabbar-item>
+  <van-tabbar-item icon="friends-o" replace to="/company" badge="5">标签</van-tabbar-item>
   <van-tabbar-item icon="setting-o" badge="20">标签</van-tabbar-item>
 </van-tabbar>
 </template>
