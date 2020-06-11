@@ -1,5 +1,7 @@
 <template>
   <div class="page company">
+    <!-- <my-nav-bar></my-nav-bar> -->
+    <nav-test-b></nav-test-b>
     <header class="header-bg">
       <p class="title">单位卡汇总</p>
       <div id="header_wrap" class="text-center">
@@ -12,7 +14,7 @@
         </div>
       </div>
     </header>
-    <mescroll-vue ref="mescroll"  :up="mescrollUp" @init="mescrollInit" class="content paddingBottom">
+    <mescroll-vue ref="mescroll" :up="mescrollUp" @init="mescrollInit" class="content paddingBottom">
       <ul id="ul_wrap" class="detail-wrap">
         <template v-for="(item,idx) in listDetail">
           <li class="item" :key="idx">

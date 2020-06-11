@@ -1,22 +1,22 @@
 <template>
   <div id="app">
     <keep-alive>
-       <router-view v-if="$route.meta.keepAlive"></router-view>
+      <router-view v-if="$route.meta.keepAlive"></router-view>
     </keep-alive>
-      <router-view v-if="!$route.meta.keepAlive"></router-view>
-
-      <tab-foot-menu></tab-foot-menu>
+    <router-view v-if="!$route.meta.keepAlive"></router-view>
+    <tab-foot-menu></tab-foot-menu>
   </div>
 </template>
-
 <script>
-  import TabFootMenu from '@components/TabMenu.vue'
-  export default({
-    name:'App',
-    components:{
-      TabFootMenu
-    }
-  })
+import TabFootMenu from '@components/TabMenu.vue'
+
+export default ({
+  name: 'App',
+  components: {
+    TabFootMenu
+  }
+})
+
 </script>
 <style lang="scss">
 #app {

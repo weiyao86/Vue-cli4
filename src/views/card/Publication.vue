@@ -32,14 +32,6 @@
                             </div>
                         </template>
                 </div>
-                    <!--  <div class="chart-title">
-                <i class="chart-icon"></i>
-                <span class="chart-text">点卡过期张数曲线图
-                </span>
-            </div> -->
-                  <!--   <div>
-                        <v-chart :options="polar"></v-chart>
-                    </div> -->
         </section>
     </div>
 </template>
