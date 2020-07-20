@@ -1,10 +1,10 @@
 <template>
   <div class="page company">
-    <!-- <my-nav-bar></my-nav-bar> -->
-    <nav-test-b></nav-test-b>
+    <nav-bar>
+    </nav-bar>
     <header class="header-bg">
-      <p class="title">单位卡汇总</p>
-      <div id="header_wrap" class="text-center">
+      <!-- <p class="title">单位卡汇总</p> -->
+      <div id="header_wrap" class="header-wrap text-center">
         <div class="search-wrap">
           <div class="left"><i class="search-icon"></i></div>
           <div class="middle">

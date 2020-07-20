@@ -1,29 +1,34 @@
 <template>
   <div class="page">
+    <div id="iCenter"></div>
     <div class="vip-title-wrap">
       <span class="item"><i class="vip"></i>菜单</span>
       <span class="item total"></span>
     </div>
-    <van-cell class="title-wrap" center title="展开/收起" :border="showBorder">
-      <template #right-icon>
-        <van-switch v-model="checked" size="24" active-color="#ff7700" @change="onToggleChange" />
-      </template>
-    </van-cell>
-    <van-collapse v-model="activeNames">
-      <template v-for="(item,idx) in menuList">
-        <van-collapse-item :title="item.name" :name="idx" :key="idx">
-          <van-cell-group :border="showBorder">
-            <template v-for="(menu,i) in item.list">
-              <van-cell :title="menu.name" is-link :to="menu.link" :key="i" />
-            </template>
-          </van-cell-group>
-        </van-collapse-item>
-      </template>
-    </van-collapse>
+    <div class="content">
+      <van-cell class="title-wrap" center title="展开/收起" :border="showBorder">
+        <template #right-icon>
+          <van-switch v-model="checked" size="24" active-color="#ff7700" @change="onToggleChange" />
+        </template>
+      </van-cell>
+      <van-collapse v-model="activeNames">
+        <template v-for="(item,idx) in menuList">
+          <van-collapse-item :title="item.name" :name="idx" :key="idx">
+            <van-cell-group :border="showBorder">
+              <template v-for="(menu,i) in item.list">
+                <van-cell :title="menu.name" is-link :to="menu.link" :key="i" />
+              </template>
+            </van-cell-group>
+          </van-collapse-item>
+        </template>
+      </van-collapse>
+    </div>
   </div>
 </template>
 <script>
 import { CellGroup, Cell, Collapse, CollapseItem, Switch } from 'vant';
+
+import VConsole from 'vconsole'
 
 export default ({
   name: 'Main',
@@ -54,6 +59,12 @@ export default ({
           name: '卡余额汇总',
           link: '/range'
         }]
+      }, {
+        name: '登录',
+        list: [{
+          name: '登录',
+          link: '/login'
+        }]
       }]
     }
   },
@@ -64,6 +75,12 @@ export default ({
         length: me.menuList.length
       }, (v, k) => k);
     }
+
+    let vConsole = new VConsole();
+  },
+  mounted() {
+    let me = this;
+    me.initAmap();
   },
   methods: {
     onToggleChange(val) {
@@ -78,12 +95,54 @@ export default ({
       } else {
         me.activeNames = [];
       }
+    },
+
+    //测试地图
+    initAmap() {
+      let me = this;
+      let amap = new AMap.Map("iCenter"),
+        geolocation;
+      AMap.plugin('AMap.Geolocation', function() {
+        geolocation = new AMap.Geolocation({
+          timeout: 10000,
+          GeoLocationFirst: false,
+          maximumAge: 0,
+          // 定位按钮的停靠位置的偏移量，默认：Pixel(10, 20)
+          buttonOffset: new AMap.Pixel(10, 20),
+          buttonPosition: 'RB'
+        });
+        amap.addControl(geolocation);
+        geolocation.getCurrentPosition();
+
+        AMap.event.addListener(geolocation, 'complete', function(data) {
+          data.position.getLng();
+          data.position.getLat();
+          alert('获取当前位置成功!')
+        })
+        AMap.event.addListener(geolocation, 'error', function(data) {
+
+          if (data.info == 'FAILED') {
+            alert('获取当前位置失败!')
+          }
+        })
+
+      });
+
+      // setTimeout(() => {
+      // window.location.href = "https://uri.amap.com/marker?position=116.473195,39.993253"
+      // }, 5000)
+
+
     }
   }
 });
 
 </script>
 <style lang="scss">
+#iCenter {
+  height: 300px;
+}
+
 .vip-title-wrap {
   flex: 1;
   display: flex;

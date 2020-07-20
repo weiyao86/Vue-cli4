@@ -3,6 +3,11 @@ body {
     background: #f5f5f5;
 }
 
+html,
+body {
+    background: #f5f5f5;
+}
+
 .header-bg {
     background: url("../../images/banner_bg.png") no-repeat center/cover transparent;
     height: 7.5rem;
@@ -107,10 +112,11 @@ body {
         margin: 0.9375rem;
         font-size: 0.875rem;
 
-        .title{
-            color:#ff7700;
-            padding:0 0.625rem 0 0;
+        .title {
+            color: #ff7700;
+            padding: 0 0.625rem 0 0;
         }
+
         span {
             font-weight: bold;
         }
@@ -151,7 +157,7 @@ body {
             .middle {
                 flex: 1;
                 display: flex;
-                align-items: center;
+                align-items: flex-end;
                 justify-content: center;
                 font-size: 1.125rem;
                 color: #00bb4e;
@@ -160,20 +166,27 @@ body {
 
             .down {
                 flex: 1;
-                align-items: flex-start;
+                align-items: center;
                 justify-content: center;
-                font-size: 0.875rem;
-                color: #333;
-                font-weight: bold;
-                line-height: 1.0rem;
-                display: -webkit-box;
-                -webkit-box-orient: vertical;
-                -webkit-line-clamp: 2;
-                overflow: hidden;
+                display: flex;
+
+                .text {
+                    flex: 1;
+                    font-size: 0.875rem;
+                    color: #333;
+                    font-weight: bold;
+                    line-height: 1.0rem;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                    overflow: hidden;
+
+                }
             }
 
         }
-        .no-bottom-line{
+
+        .no-bottom-line {
             border-bottom-width: 0;
         }
     }

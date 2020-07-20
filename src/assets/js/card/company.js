@@ -6,15 +6,15 @@ var globalExpireCardConfig = {
 };
 
 import
-NavTestB
-from '@components/NavbarTest.vue';
-alert(NavTestB)
+NavBar
+from '@components/NavBar.vue';
+
 import MescrollVue from 'mescroll.js/mescroll.vue'
 
 export default ({
   name: "Company",
   components: {
-    NavTestB,
+    NavBar,
     MescrollVue
   },
   data() {

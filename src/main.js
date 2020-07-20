@@ -5,9 +5,13 @@ import CommonHttp from './lib/commonHttp'
 import Config from './lib/config'
 import Adjust from './lib/adjust'
 import {
-  Toast
+  Toast,
+  Form,
+  Field,
+  Button
 } from 'vant';
 import router from './router'
+
 import store from './store'
 import 'animate.css'
 
@@ -16,6 +20,7 @@ Vue.config.productionTip = false
 
 Vue.use(Plug, CommonHttp);
 Vue.use(Config);
+Vue.use(require('vue-wechat-title'));
 
 var attachFastClick = require('fastclick');
 attachFastClick.attach(document.body);
@@ -24,7 +29,7 @@ attachFastClick.attach(document.body);
 Toast.setDefaultOptions('loading', {
   forbidClick: true
 });
-Vue.use(Toast);
+Vue.use(Toast).use(Form).use(Field).use(Button);
 
 window.GlobalVue = new Vue({
   router,

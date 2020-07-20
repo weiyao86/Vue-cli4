@@ -18,7 +18,8 @@ const routes = [{
   component: () =>
     import( /* webpackChunkName: "about" */ '@views/card/Expire.vue'),
   meta: {
-    keepAlive: false
+    keepAlive: false,
+    title: '过期卡汇总'
   }
 }, {
   path: '/publication',
@@ -26,7 +27,8 @@ const routes = [{
   component: () =>
     import('@views/card/Publication.vue'),
   meta: {
-    keepAlive: false
+    keepAlive: false,
+    title: '发行卡汇总'
   }
 }, {
   path: '/company',
@@ -34,7 +36,8 @@ const routes = [{
   component: () =>
     import('@views/card/Company.vue'),
   meta: {
-    keepAlive: false
+    keepAlive: false,
+    title: '单位卡汇总'
   }
 }, {
   path: '/range',
@@ -42,7 +45,17 @@ const routes = [{
   component: () =>
     import('@views/card/Range.vue'),
   meta: {
-    keepAlive: false
+    keepAlive: false,
+    title: '卡余额汇总'
+  }
+}, {
+  path: '/login',
+  name: 'Login',
+  component: () =>
+    import('@views/login/login'),
+  meta: {
+    keepAlive: false,
+    title: '登录'
   }
 }]
 

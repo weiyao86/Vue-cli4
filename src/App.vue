@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <keep-alive>
-      <router-view v-if="$route.meta.keepAlive"></router-view>
+      <router-view v-if="$route.meta.keepAlive" v-wechat-title="$route.meta.title"></router-view>
     </keep-alive>
-    <router-view v-if="!$route.meta.keepAlive"></router-view>
+    <router-view v-if="!$route.meta.keepAlive" v-wechat-title="$route.meta.title"></router-view>
     <tab-foot-menu></tab-foot-menu>
   </div>
 </template>

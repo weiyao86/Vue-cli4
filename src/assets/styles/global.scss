@@ -30,7 +30,29 @@
 
  .page {
      padding-bottom: 0;
+
+     .header-wrap {
+         padding-top: 2.875rem;
+     }
+
+     /* 头部样式 */
+     .van-nav-bar {
+         background: transparent;
+
+         .van-icon {
+             color: #fff;
+         }
+
+         .van-nav-bar__title {
+             color: #fff;
+         }
+
+     }
  }
+
+
+
+
 
  .paddingBottom {
      padding-bottom: 0;
