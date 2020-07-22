@@ -121,12 +121,13 @@ module.exports = {
       "/api": {
         target: "https://www.xinyingtong.cn/api/",
         changeOrigin: true,
-        // ws: true,//websocket支持
+        // ws: true, //websocket支持
         secure: false,
         pathRewrite: {
-          "^/api": "/"
+          "^/api": ""
         }
       }
     }
+
   }
 }

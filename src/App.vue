@@ -4,17 +4,12 @@
       <router-view v-if="$route.meta.keepAlive" v-wechat-title="$route.meta.title"></router-view>
     </keep-alive>
     <router-view v-if="!$route.meta.keepAlive" v-wechat-title="$route.meta.title"></router-view>
-    <tab-foot-menu></tab-foot-menu>
   </div>
 </template>
 <script>
-import TabFootMenu from '@components/TabMenu.vue'
-
 export default ({
-  name: 'App',
-  components: {
-    TabFootMenu
-  }
+  name: 'App'
+
 })
 
 </script>
